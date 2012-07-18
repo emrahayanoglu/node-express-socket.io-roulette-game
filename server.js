@@ -16,8 +16,9 @@ app.configure(function(){
     app.use(express.methodOverride());
     app.use(express.bodyParser());
     app.use(app.router);
-	app.set('views', __dirname + '/views');
-	app.set('view engine', 'ejs');
+    app.set('views', __dirname + '/views');
+    app.set('view engine', 'ejs');
+    app.use(express.static(__dirname + '/public'));
 });
 
 app.get('/', function(req, res){
